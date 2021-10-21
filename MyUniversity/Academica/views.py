@@ -13,7 +13,7 @@ def contactar(request):
         asunto = request.POST["txtAsunto"]
         mensaje = request.POST["txtMensaje"] + request.POST["txtEmail"]
         email_desde = settings.EMAIL_HOST_USER
-        email_para = ["santiagoospina@makata.tv"]
+        email_para = ["correo@gmail.com"]
         send_mail(asunto, mensaje, email_desde, email_para, fail_silently=False)
         return render(request, "contactoExitoso.html")
     return render(request, "formularioContacto.html")
